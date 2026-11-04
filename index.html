@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>EAGLE PANEL | Premium Yayın Deneyimi</title>
+
+<style>
+
+:root {
+
+--gold:#d8b66c;
+
+--gold2:#f8e5b1;
+
+--black:#08090c;
+
+--panel:#14161d;
+
+--white:#fff;
+
+--gray:#aaa;
+
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+
+margin:0;
+
+background:var(--black);
+
+color:white;
+
+font-family:Arial,sans-serif;
+
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{width:92%;max-width:1150px;margin:auto}
+
+header{
+
+background:#0c0d11;
+
+border-bottom:1px solid #38301f;
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+}
+
+nav{
+
+height:75px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-size:27px;
+
+font-weight:900;
+
+letter-spacing:4px;
+
+color:white;
+
+}
+
+.logo span{color:var(--gold)}
+
+.logo small{
+
+display:block;
+
+font-size:10px;
+
+letter-spacing:8px;
+
+text-align:center;
+
+color:var(--gold);
+
+}
+
+.menu a{
+
+margin-left:20px;
+
+font-size:14px;
+
+color:#ddd;
+
+}
+
+.menu a:hover{color:var(--gold)}
+
+.btn{
+
+display:inline-block;
+
+padding:14px 23px;
+
+background:linear-gradient(120deg,#f6dfa6,#b88b3c);
+
+color:#111;
+
+border-radius:8px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn:hover{transform:translateY(-3px)}
+
+.hero{
+
+min-height:570px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:35px;
+
+padding:65px 0;
+
+}
+
+.hero h1{
+
+font-size:clamp(38px,6vw,65px);
+
+line-height:1.08;
+
+margin:20px 0;
+
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+
+color:#aaa;
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.hero-image{
+
+background:linear-gradient(145deg,#29251c,#101115);
+
+border:1px solid #8d713c;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 20px 60px #000;
+
+}
+
+.eagle{
+
+font-size:90px;
+
+color:var(--gold);
+
+}
+
+.hero-image h2{
+
+font-size:40px;
+
+letter-spacing:7px;
+
+margin:5px;
+
+}
+
+.hero-image p{
+
+letter-spacing:12px;
+
+color:var(--gold);
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.section-title h2{
+
+font-size:35px;
+
+}
+
+.section-title span{color:var(--gold)}
+
+section{padding:65px 0}
+
+.tabs{
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+margin-bottom:30px;
+
+}
+
+.tab{
+
+border:1px solid var(--gold);
+
+background:#151515;
+
+color:white;
+
+padding:13px 25px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+.tab.active{
+
+background:var(--gold);
+
+color:#111;
+
+font-weight:bold;
+
+}
+
+.prices{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:17px;
+
+}
+
+.card{
+
+background:linear-gradient(145deg,#202127,#101116);
+
+border:1px solid #786033;
+
+border-radius:15px;
+
+text-align:center;
+
+padding:28px 15px;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-7px);
+
+border-color:#ffe4a2;
+
+}
+
+.card h3{
+
+font-size:21px;
+
+color:var(--gold2);
+
+}
+
+.card .price{
+
+font-size:35px;
+
+font-weight:900;
+
+margin:20px 0;
+
+}
+
+.card .price small{font-size:15px}
+
+.card a{
+
+display:block;
+
+padding:12px;
+
+background:var(--gold);
+
+color:#111;
+
+border-radius:7px;
+
+font-weight:bold;
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+}
+
+.feature{
+
+background:var(--panel);
+
+border:1px solid #302a20;
+
+padding:25px 15px;
+
+text-align:center;
+
+border-radius:13px;
+
+}
+
+.feature .icon{
+
+font-size:32px;
+
+color:var(--gold);
+
+}
+
+.feature h3{font-size:16px}
+
+.feature p{
+
+color:#aaa;
+
+font-size:13px;
+
+line-height:1.6;
+
+}
+
+.catalog{
+
+background:linear-gradient(130deg,#191710,#101116);
+
+border:1px solid #8c703d;
+
+border-radius:20px;
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.catalog h2{
+
+font-size:35px;
+
+color:var(--gold2);
+
+}
+
+.catalog p{
+
+color:#aaa;
+
+line-height:1.8;
+
+}
+
+.steps{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.step{
+
+background:var(--panel);
+
+padding:25px;
+
+border-radius:12px;
+
+border:1px solid #35302a;
+
+}
+
+.step strong{
+
+color:var(--gold);
+
+font-size:25px;
+
+}
+
+.faq{
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+details{
+
+background:#15171d;
+
+padding:18px;
+
+margin:12px 0;
+
+border:1px solid #393124;
+
+border-radius:10px;
+
+}
+
+summary{
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+details p{
+
+color:#aaa;
+
+line-height:1.7;
+
+}
+
+.contact{
+
+text-align:center;
+
+padding:55px 20px;
+
+background:linear-gradient(120deg,#292216,#101116);
+
+border:1px solid #92733b;
+
+border-radius:20px;
+
+}
+
+.contact h2{
+
+font-size:35px;
+
+}
+
+.contact p{
+
+color:#bbb;
+
+line-height:1.7;
+
+}
+
+footer{
+
+padding:35px 0;
+
+text-align:center;
+
+border-top:1px solid #393124;
+
+color:#999;
+
+font-size:13px;
+
+}
+
+.telegram{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+z-index:20;
+
+background:#229ed9;
+
+padding:15px 22px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+color:white;
+
+box-shadow:0 5px 25px #000;
+
+}
+
+@media(max-width:800px){
+
+.hero{grid-template-columns:1fr}
+
+.prices{grid-template-columns:repeat(2,1fr)}
+
+.features{grid-template-columns:repeat(2,1fr)}
+
+.steps{grid-template-columns:1fr}
+
+.menu a{margin-left:8px;font-size:12px}
+
+}
+
+@media(max-width:480px){
+
+.logo{font-size:20px}
+
+.hero{padding:40px 0}
+
+.hero h1{font-size:42px}
+
+.prices{gap:9px}
+
+.card{padding:20px 9px}
+
+.card .price{font-size:27px}
+
+.catalog{padding:25px 15px}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">EAGLE<span>.</span>
+
+<small>PANEL</small></div>
+
+<div class="menu">
+
+<a href="#anasayfa">Ana Sayfa</a>
+
+<a href="#paketler">Paketler</a>
+
+<a href="#ozellikler">Özellikler</a>
+
+<a href="#iletisim">İletişim</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="container hero" id="anasayfa">
+
+<div>
+
+<h4 style="color:#d8b66c;letter-spacing:4px">EAGLE PANEL PREMIUM</h4>
+
+<h1>Yayın Dünyasına<br><span>Hoş Geldiniz.</span></h1>
+
+<p>
+
+Eagle Panel ile paket seçeneklerini inceleyin.
+
+Kişiye özel kullanıcı adı ve şifre seçenekleri,
+
+cihaz uyumluluğu ve destek hakkında bilgi alın.
+
+</p>
+
+<a class="btn" href="#paketler">PAKETLERİ İNCELE</a>
+
+</div>
+
+<div class="hero-image">
+
+<div class="eagle">♛</div>
+
+<h2>EAGLE</h2>
+
+<p>PANEL</p>
+
+<div style="height:2px;background:#d8b66c;margin:25px auto;width:70%"></div>
+
+<p style="letter-spacing:3px">PREMIUM EXPERIENCE</p>
+
+</div>
+
+</div>
+
+<section id="paketler">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>PAKET <span>SEÇENEKLERİ</span></h2>
+
+<p style="color:#aaa">Size uygun süreyi seçin.</p>
+
+</div>
+
+<div class="tabs">
+
+<button class="tab active" onclick="showPrices('tr',this)">🇹🇷 YURT İÇİ</button>
+
+<button class="tab" onclick="showPrices('foreign',this)">YURT DIŞI</button>
+
+</div>
+
+<div class="prices" id="prices"></div>
+
+</div>
+
+</section>
+
+<section id="ozellikler">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>ÖNE ÇIKAN <span>ÖZELLİKLER</span></h2>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="icon">♙</div>
+
+<h3>Kişiye Özel Hesap</h3>
+
+<p>Kullanıcıya özel kullanıcı adı ve şifre seçenekleri.</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">▣</div>
+
+<h3>Çoklu Cihaz</h3>
+
+<p>Uyumlu Smart TV, Android, iOS ve TV Box seçenekleri.</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">4K</div>
+
+<h3>Görüntü Kalitesi</h3>
+
+<p>Desteklenen içeriklerde HD ve 4K görüntü seçenekleri.</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">ϟ</div>
+
+<h3>Performans</h3>
+
+<p>FPS ve yayın akıcılığı cihaz ve internet bağlantısına bağlıdır.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="catalog">
+
+<h2>EAGLE PANEL</h2>
+
+<h3 style="letter-spacing:5px">PREMIUM PAKET KATALOĞU</h3>
+
+<p>
+
+3 AY • 6 AY • 12 AY • 24 AY<br>
+
+Yurt içi ve yurt dışı seçenekleri.<br>
+
+Kişiye özel hesap bilgileri için bizimle iletişime geçin.
+
+</p>
+
+<a class="btn" href="https://t.me/eaglepanel34">FİYAT BİLGİSİ AL</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>NASIL <span>İLERLİYORUZ?</span></h2>
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+
+<strong>01</strong>
+
+<h3>Paketini Seç</h3>
+
+<p>Yurt içi veya yurt dışı paketini belirle.</p>
+
+</div>
+
+<div class="step">
+
+<strong>02</strong>
+
+<h3>Bize Ulaş</h3>
+
+<p>Telegram üzerinden cihaz ve paket bilgilerini ilet.</p>
+
+</div>
+
+<div class="step">
+
+<strong>03</strong>
+
+<h3>Bilgileri Teyit Et</h3>
+
+<p>Hizmet koşullarını ve hesap detaylarını doğrula.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sss">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>SIKÇA SORULAN <span>SORULAR</span></h2>
+
+</div>
+
+<div class="faq">
+
+<details>
+
+<summary>Kullanıcı adı ve şifre kişiye özel mi?</summary>
+
+<p>Kişiye özel hesap bilgisi seçeneği hakkında Telegram üzerinden bilgi alabilirsiniz.</p>
+
+</details>
+
+<details>
+
+<summary>Hangi cihazlarda kullanılabilir?</summary>
+
+<p>Cihaz ve uygulama uyumluluğunu modelinizi belirterek öğrenebilirsiniz.</p>
+
+</details>
+
+<details>
+
+<summary>4K ve 40-50 FPS destekleniyor mu?</summary>
+
+<p>Görüntü kalitesi ve FPS içerik kaynağına, cihaza ve internet bağlantısına bağlıdır. Her içerik için garanti edilemez.</p>
+
+</details>
+
+<details>
+
+<summary>Nasıl iletişim kurabilirim?</summary>
+
+<p>Sayfadaki Telegram butonlarından doğrudan mesaj gönderebilirsiniz.</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="iletisim">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>EAGLE PANEL İLE İLETİŞİME GEÇİN</h2>
+
+<p>Paket seçenekleri, cihaz uyumluluğu ve hizmet detayları için bize yazın.</p>
+
+<a class="btn" href="https://t.me/eaglepanel34" target="_blank">
+
+TELEGRAM'DAN MESAJ GÖNDER
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<h3 style="color:#d8b66c;letter-spacing:4px">EAGLE PANEL</h3>
+
+<p>© 2026 Eagle Panel. Tüm hakları saklıdır.</p>
+
+<p>Yalnızca gerekli yayın ve dağıtım haklarına sahip olduğunuz içerikler için hizmet sunun.</p>
+
+</div>
+
+</footer>
+
+<a class="telegram" href="https://t.me/eaglepanel34" target="_blank">
+
+✈ Telegram
+
+</a>
+
+<script>
+
+const packages = {
+
+tr:[
+
+["3 AY","600"],
+
+["6 AY","900"],
+
+["12 AY","1.600"],
+
+["24 AY","2.300"]
+
+],
+
+foreign:[
+
+["3 AY","800"],
+
+["6 AY","1.100"],
+
+["12 AY","1.800"],
+
+["24 AY","2.500"]
+
+]
+
+};
+
+function showPrices(type,button){
+
+document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+
+button.classList.add("active");
+
+document.getElementById("prices").innerHTML=
+
+packages[type].map(p=>`
+
+<div class="card">
+
+<h3>${p[0]}</h3>
+
+<div class="price">${p[1]} <small>₺</small></div>
+
+<a href="https://t.me/eaglepanel34" target="_blank">BİLGİ AL</a>
+
+</div>
+
+`).join("");
+
+}
+
+showPrices("tr",document.querySelector(".tab"));
+
+</script>
+
+</body>
+
+</html>
